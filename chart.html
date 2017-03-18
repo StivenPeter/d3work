@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <script src="d3-src/d3.min.js" charset="utf-8"></script>
+    <title>US Financial Report</title>
+
+    <style>
+     .chart div {
+       font: 10px sans-serif;
+       background-color: steelblue;
+       text-align: right;
+       padding: 3px;
+       margin: 1px;
+       color: white;
+     }
+    </style>
+
+  </head>
+
+  <body>
+    
+    <center><h1>USA Financial Statistics</h1>
+    </center>
+    <hr>
+
+    <h2>GDP</h2>
+    <div class="chart" id="dynamic0"> </div>
+    <hr>
+
+    <h2>Total Revenues</h2>
+    <div class="chart" id="dynamic1"> </div>
+    <hr>
+
+    <h2>Total Spending</h2>
+    <div class="chart" id="dynamic2"> </div>
+    <hr>
+
+    <h2>Total Deficit</h2>
+    <div class="chart" id="dynamic3"> </div>
+    <hr>
+
+    <h2>Total Deficit % GDP</h2>
+    <div class="chart" id="dynamic4"> </div>
+    <hr>
+
+<script>
+   var dyn = d3.select("#dynamic");
+     var info = [4, 8, 15, 16, 23, 42];
+     var makeBars = function() { 
+    
+     };
+     var transitionTest = function( scale ) {
+  
+     };
+</script>
+
+  </body>
+</html>
