@@ -40,20 +40,61 @@
     <div class="chart" id="dynamic3"> </div>
     <hr>
 
-    <h2>Total Deficit % GDP</h2>
+    <h2>Total Debt</h2>
     <div class="chart" id="dynamic4"> </div>
     <hr>
 
-<script>
-   var dyn = d3.select("#dynamic");
-     var info = [4, 8, 15, 16, 23, 42];
-     var makeBars = function() { 
-    
-     };
-     var transitionTest = function( scale ) {
-  
-     };
-</script>
+    <script>
+      var GDP = [16.5,12.5]; 
+      var GDPdyn = d3.select("#dynamic0");
+      var revenuedyn = d3.select("#dynamic1");
+      var revenue = [2.99, 2.49];
+      var spendingdyn = d3.select("#dynamic2");
+      var spending = [3.54, 2.2];
+      var deficitdyn = d3.select("#dynamic3");
+      var deficit = [.552, -.290];
+      var debtdyn = d3.select("#dynamic4");
+      var debt = [17.4, 6.91];
 
+      var info;
+      var dyn;
+      
+      var makeChart = function() { 
+      dyn.selectAll("div")
+      .data(info)
+      .enter()
+      .append("div")
+      .style("width", function(d) {
+      return d*50 + "px";
+      })
+      .text( function(d) {
+      return "$"+d+" trillion";
+      });
+      };
+
+      var makeDeficit = function() { 
+      dyn.selectAll("div")
+      .data(info)
+      .enter()
+      .append("div")
+      .style("width", function(d) {
+      return Math.abs(d)*50 + "px";
+      })
+      .text( function(d) {
+      return "$"+d+" trillion";
+      });
+      };
+      
+      var transitionTest = function( scale ) {
+      dyn.selectAll("div")
+      .data(info)
+      .transition()
+      .duration(2000)
+      .style("width", function(d) {
+      return d * scale + "px";
+      });
+      };
+    </script>
+    
   </body>
 </html>
